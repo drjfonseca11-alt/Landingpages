@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Pages que Convierten</title>
+  <meta name="description" content="Creo landing pages simples y efectivas usando IA. Entrega rápida, precio claro y enfocadas en conversión.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #1a1a1a;
+      line-height: 1.8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    /* Header mejorado con gradiente profundo */
+    header {
+      text-align: center;
+      padding: 100px 24px 120px;
+      background: linear-gradient(160deg, #0a192f 0%, #1e3a8a 50%, #0f172a 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.15), transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(30, 58, 138, 0.2), transparent 50%);
+      pointer-events: none;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 40px;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* Botones mejorados con mejor contraste y efecto lift */
+    .btn {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 18px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 14px rgba(255, 107, 53, 0.4);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #e55527;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      margin-top: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Botón flotante WhatsApp mejorado */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #25d366;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      }
+      50% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6);
+      }
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+    }
+
+    /* Badge de urgencia con animación */
+    .urgency-badge {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      animation: slideDown 0.6s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Secciones con más espacio */
+    section {
+      margin: 120px 0;
+    }
+
+    section:first-child {
+      margin-top: 80px;
+    }
+
+    /* Separador sutil entre secciones */
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6b35, #1e3a8a);
+      margin: 0 auto 60px;
+      border-radius: 2px;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: start;
+    }
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 28px;
+      color: #0a192f;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #0a192f;
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 16px;
+      padding-left: 32px;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 20px;
+      height: 20px;
+      background: #ff6b35;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul li::after {
+      content: "✓";
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    /* Cards con más elevación y contraste */
+    .card {
+      background: white;
+      padding: 50px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(30, 58, 138, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .price {
+      font-family: 'Inter', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 28px 0;
+      color: #ff6b35;
+      letter-spacing: -0.02em;
+    }
+
+    .price-detail {
+      font-size: 1.05rem;
+      color: #64748b;
+      margin-top: -16px;
+      margin-bottom: 28px;
+    }
+
+    /* Testimonios mejorados */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #ff6b35;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial:hover {
+      box-shadow: 0 12px 45px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #475569;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .testimonial-text::before {
+      content: '"';
+      font-size: 3rem;
+      color: #ff6b35;
+      opacity: 0.3;
+      line-height: 0;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: #0a192f;
+      font-size: 1.05rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .testimonial-result {
+      background: linear-gradient(135deg, #fff5f0, #ffe8dc);
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #e55527;
+      font-weight: 700;
+      border: 1px solid rgba(255, 107, 53, 0.2);
+    }
+
+    /* Proceso visual mejorado */
+    .process-flow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    .process-step {
+      flex: 1;
+      min-width: 160px;
+      text-align: center;
+      padding: 32px 24px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .process-step:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .process-arrow {
+      font-size: 2.5rem;
+      color: #ff6b35;
+      flex-shrink: 0;
+      font-weight: bold;
+    }
+
+    .process-step-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b35, #e55527);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      line-height: 48px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+
+    .process-step strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: #0a192f;
+    }
+
+    /* Stats mejoradas */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin: 50px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 40px 32px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid #ff6b35;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff6b35, #1e3a8a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: #64748b;
+      margin-top: 16px;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    /* Footer mejorado */
+    footer {
+      text-align: center;
+      padding: 60px 24px;
+      background: linear-gradient(135deg, #0a192f, #1e3a8a);
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #ff6b35;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #e55527;
+    }
+
+    /* Destacar sección de precio */
+    #precio .card {
+      background: linear-gradient(135deg, #ffffff, #f8f9fa);
+      border: 2px solid #ff6b35;
+      box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
+    }
+
+    #precio .card:hover {
+      box-shadow: 0 25px 70px rgba(255, 107, 53, 0.2);
+    }
+
+    /* Responsive mejorado */
+    @media (max-width: 768px) {
+      .process-arrow {
+        display: none;
+      }
+      
+      header h1 {
+        font-size: 2.25rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      h2 {
+        font-size: 1.85rem;
+      }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+        bottom: 24px;
+        right: 24px;
+      }
+
+      .card {
+        padding: 36px;
+      }
+
+      .stat-number {
+        font-size: 2.75rem;
+      }
+
+      section {
+        margin: 80px 0;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 60px 20px 80px;
+      }
+
+      header h1 {
+        font-size: 1.85rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .price {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Garantía destacada */
+    .guarantee-box {
+      background: linear-gradient(135deg, #fff5f0, #ffe8dc);
+      border: 3px solid #ff6b35;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guarantee-box::before {
+      content: '🛡️';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.1;
+      top: -20px;
+      right: 20px;
+    }
+
+    .guarantee-badge {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .guarantee-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0a192f;
+      margin-bottom: 16px;
+    }
+
+    .guarantee-text {
+      font-size: 1.1rem;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    /* Comparación de valor */
+    .comparison-table {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+      margin: 40px 0;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-header {
+      background: linear-gradient(135deg, #0a192f, #1e3a8a);
+      color: white;
+      font-weight: 700;
+      padding: 20px;
+    }
+
+    .comparison-cell {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .comparison-highlight {
+      background: linear-gradient(135deg, #fff5f0, #ffe8dc);
+      font-weight: 700;
+      color: #0a192f;
+    }
+
+    .comparison-label {
+      justify-content: flex-start;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    /* Para quién es */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .audience-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .audience-card.perfect {
+      border: 3px solid #10b981;
+      background: linear-gradient(135deg, #ffffff, #f0fdf4);
+    }
+
+    .audience-card.not-for {
+      border: 3px solid #ef4444;
+      background: linear-gradient(135deg, #ffffff, #fef2f2);
+    }
+
+    .audience-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .audience-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .audience-card.perfect .audience-title {
+      color: #10b981;
+    }
+
+    .audience-card.not-for .audience-title {
+      color: #ef4444;
+    }
+
+    .audience-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .audience-list li {
+      padding-left: 28px;
+      margin-bottom: 10px;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .audience-card.perfect .audience-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .audience-card.not-for .audience-list li::before {
+      content: "✗";
+      position: absolute;
+      left: 0;
+      color: #ef4444;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0a192f;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: #f8f9fa;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: #ff6b35;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 24px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 24px 24px;
+    }
+
+    /* Bonuses */
+    .bonus-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .bonus-item {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      border-left: 5px solid #10b981;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .bonus-label {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #10b981;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .bonus-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0a192f;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+
+    .bonus-value {
+      color: #10b981;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    /* CTA intermedio */
+    .cta-intermediate {
+      background: linear-gradient(135deg, #0a192f, #1e3a8a);
+      color: white;
+      padding: 60px 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(10, 25, 47, 0.3);
+      margin: 80px 0;
+    }
+
+    .cta-intermediate h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta-intermediate p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Countdown timer */
+    .countdown-box {
+      background: linear-gradient(135deg, #fef2f2, #fee2e2);
+      border: 2px solid #ef4444;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin: 24px 0;
+    }
+
+    .countdown-text {
+      font-size: 1rem;
+      color: #991b1b;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      min-width: 80px;
+    }
+
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ef4444;
+      display: block;
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    /* Portfolio preview */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .portfolio-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #e0e7ff, #f0f9ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border-bottom: 3px solid #ff6b35;
+    }
+
+    .portfolio-info {
+      padding: 20px;
+    }
+
+    .portfolio-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0a192f;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-desc {
+      font-size: 0.95rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-cell {
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .comparison-header:not(:first-child) {
+        display: none;
+      }
+
+      .countdown-timer {
+        gap: 8px;
+      }
+
+      .countdown-item {
+        min-width: 70px;
+        padding: 10px 16px;
+      }
+
+      .countdown-number {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/573105034945" class="whatsapp-float" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+  💬
+</a>
+
+<header>
+  <div class="urgency-badge">⚡ Solo 3 proyectos disponibles este mes</div>
+  <h1>Landing pages que convierten visitas en clientes</h1>
+  <p>Diseño, texto y estructura creados con apoyo de IA.<br>
+     Entrega en 5 días. Precio claro. Sin agencias ni estrés.</p>
+  <a href="#contacto" class="btn">Consigue tu landing en 5 días</a>
+  <a href="#precio" class="btn btn-secondary">Ver precio y qué incluye</a>
+</header>
+
+<div class="container">
+
+  <!-- Urgencia con countdown -->
+  <section style="margin-top: 40px;">
+    <div class="countdown-box">
+      <div class="countdown-text">🔥 Próximos 3 proyectos se entregan antes del 28 de Febrero</div>
+      <div class="countdown-timer">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">12</span>
+          <span class="countdown-label">días</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">08</span>
+          <span class="countdown-label">horas</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">34</span>
+          <span class="countdown-label">minutos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas de credibilidad -->
+  <section>
+    <h2 style="text-align: center;">Resultados reales</h2>
+    <div class="section-divider"></div>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <div class="stat-label">Landing pages entregadas</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4.2x</span>
+        <div class="stat-label">Aumento promedio en conversión</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3-5</span>
+        <div class="stat-label">Días de entrega</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="two-columns">
+      <div>
+        <h2>¿Te suena familiar?</h2>
+        <ul>
+          <li>Tienes algo bueno que vender, pero no una página clara</li>
+          <li>Instagram no convierte</li>
+          <li>Todo termina en WhatsApp desordenado</li>
+          <li>Tu web nunca queda lista</li>
+        </ul>
+      </div>
+      <div>
+        <h2>La solución</h2>
+        <p style="font-size: 1.15rem; font-weight: 600; margin-bottom: 24px; color: #1e3a8a;">
+          Tu cliente ve el producto → Lee beneficios claros → Hace clic → Compra
+        </p>
+        <p style="margin-bottom: 16px;">
+          Creo landing pages simples, rápidas y enfocadas en conversión.
+          Uso IA para acelerar el diseño y los textos, pero el criterio estratégico es 100% humano.
+        </p>
+        <p>
+          Sin reuniones eternas. Sin revisiones infinitas. Sin sorpresas en el precio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona el proceso -->
+  <section>
+    <h2 style="text-align: center;">Cómo funciona</h2>
+    <div class="section-divider"></div>
+    <div class="process-flow">
+      <div class="process-step">
+        <div class="process-step-number">1</div>
+        <strong>Tus clientes llegan</strong>
+        <p style="font-size: 0.95rem; color: #64748b; margin-top: 8px;">Desde redes, anuncios o Google</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="process-step-number">2</div>
+        <strong>Leen beneficios claros</strong>
+        <p style="font-size: 0.95rem; color: #64748b; margin-top: 8px;">Mensaje directo y persuasivo</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="process-step-number">3</div>
+        <strong>Hacen clic</strong>
+        <p style="font-size: 0.95rem; color: #64748b; margin-top: 8px;">Botón a WhatsApp o formulario</p>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="process-step-number">4</div>
+        <strong>Compran</strong>
+        <p style="font-size: 0.95rem; color: #64748b; margin-top: 8px;">Conversión real y medible</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para quién es esto -->
+  <section>
+    <h2 style="text-align: center;">¿Es esto para ti?</h2>
+    <div class="section-divider"></div>
+    <div class="audience-grid">
+      <div class="audience-card perfect">
+        <div class="audience-icon">✅</div>
+        <h3 class="audience-title">Perfecto si vendes:</h3>
+        <ul class="audience-list">
+          <li>Cursos online o mentoría</li>
+          <li>Coaching (salud, negocios, vida)</li>
+          <li>Servicios profesionales y consultoría</li>
+          <li>Productos digitales (ebooks, plantillas)</li>
+          <li>Tecnología y gadgets (auriculares, smartwatch, etc.)</li>
+          <li>Productos de belleza y cuidado personal</li>
+          <li>Servicios de estética (spa, masajes, tratamientos)</li>
+          <li>Ropa y accesorios (colección específica)</li>
+          <li>Infoproductos y membresías</li>
+          <li>Productos artesanales o hechos a mano</li>
+          <li>Suplementos y productos de salud</li>
+          <li>Servicios de diseño o creativos</li>
+        </ul>
+      </div>
+      
+      <div class="audience-card not-for">
+        <div class="audience-icon">❌</div>
+        <h3 class="audience-title">No es para ti si necesitas:</h3>
+        <ul class="audience-list">
+          <li>Tienda online completa (ecommerce con 50+ productos)</li>
+          <li>Marketplace con múltiples vendedores</li>
+          <li>Plataforma web compleja con login/usuarios</li>
+          <li>Aplicación móvil nativa</li>
+          <li>Sistema de membresías con pagos recurrentes</li>
+          <li>Sitio web corporativo de 20+ páginas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Intermedio #1 -->
+  <div class="cta-intermediate">
+    <h2>¿Listo para tener tu landing que convierte?</h2>
+    <p>Miles de emprendedores ya están cerrando más ventas con páginas claras y efectivas. Es tu turno.</p>
+    <a href="#contacto" class="btn">Solicitar mi landing ahora</a>
+  </div>
+
+  <!-- Testimonios -->
+  <section>
+    <h2 style="text-align: center;">Lo que dicen mis clientes</h2>
+    <div class="section-divider"></div>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-text">
+          Antes mandaba todo a Instagram y perdía la mitad de los clientes en el camino. 
+          Ahora con la landing, explico todo en un solo lugar y cierro más ventas.
+        </div>
+        <div class="testimonial-author">María González</div>
+        <div class="testimonial-role">Coach de nutrición</div>
+        <div class="testimonial-result">📈 Conversión aumentó de 8% a 32%</div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="testimonial-text">
+          Me entregó la landing en 4 días. Diseño limpio, textos que venden y todo funcionando. 
+          Invertí $150 y recuperé la inversión la primera semana.
+        </div>
+        <div class="testimonial-author">Carlos Mendoza</div>
+        <div class="testimonial-role">Consultor de marketing digital</div>
+        <div class="testimonial-result">💰 ROI positivo en 7 días</div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="testimonial-text">
+          Probé con agencias y freelancers que cobraban el triple. Este servicio fue más rápido, 
+          más claro y más efectivo. Ya pedí mi segunda landing.
+        </div>
+        <div class="testimonial-author">Ana Ruiz</div>
+        <div class="testimonial-role">Vendedora de cursos online</div>
+        <div class="testimonial-result">⚡ Entrega en 3 días</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejemplos visuales -->
+  <section>
+    <h2 style="text-align: center;">Ejemplos de resultados</h2>
+    <div class="section-divider"></div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-image">🎓</div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Landing para curso online</div>
+          <div class="portfolio-desc">Coach de nutrición · Conversión del 28%</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-image">💄</div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Landing para línea de belleza</div>
+          <div class="portfolio-desc">Cosméticos naturales · $3,200 en ventas primera semana</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-image">👕</div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Landing para colección de ropa</div>
+          <div class="portfolio-desc">Marca independiente · 89 ventas en lanzamiento</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-image">🎧</div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Landing para gadget tech</div>
+          <div class="portfolio-desc">Auriculares inalámbricos · Conversión del 32%</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-image">💆</div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Landing para spa/estética</div>
+          <div class="portfolio-desc">Tratamientos faciales · 65 citas agendadas/mes</div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-image">💼</div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Landing para consultoría</div>
+          <div class="portfolio-desc">Asesor financiero · 45 leads en 2 semanas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Intermedio #2 -->
+  <div class="cta-intermediate">
+    <h2>¿Quieres resultados como estos?</h2>
+    <p>No pierdas más ventas por una página que no convierte. Empecemos hoy.</p>
+    <a href="#precio" class="btn">Ver inversión y qué incluye</a>
+  </div>
+
+  <!-- Comparación de valor -->
+  <section>
+    <h2 style="text-align: center;">Compara tus opciones</h2>
+    <div class="section-divider"></div>
+    <div class="comparison-table">
+      <div class="comparison-row">
+        <div class="comparison-header">Opción</div>
+        <div class="comparison-header">Precio</div>
+        <div class="comparison-header">Tiempo</div>
+        <div class="comparison-header">Resultado</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-cell comparison-label">Agencia tradicional</div>
+        <div class="comparison-cell">$800-2000</div>
+        <div class="comparison-cell">3-4 semanas</div>
+        <div class="comparison-cell">Alta calidad pero caro</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-cell comparison-label">Freelancer Fiverr/Upwork</div>
+        <div class="comparison-cell">$50-200</div>
+        <div class="comparison-cell">1-3 semanas</div>
+        <div class="comparison-cell">Calidad inconsistente</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-cell comparison-label">Hacerlo tú mismo</div>
+        <div class="comparison-cell">$0 (tu tiempo)</div>
+        <div class="comparison-cell">40+ horas</div>
+        <div class="comparison-cell">Curva de aprendizaje alta</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comparison-cell comparison-label comparison-highlight">→ Este servicio</div>
+        <div class="comparison-cell comparison-highlight">$150</div>
+        <div class="comparison-cell comparison-highlight">3-5 días</div>
+        <div class="comparison-cell comparison-highlight">Estrategia + Rapidez</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precio -->
+  <section id="precio">
+    <div class="card">
+      <h2>Landing Page Profesional</h2>
+      <p style="color: #64748b; margin-bottom: 32px; font-size: 1.05rem;">
+        Todo lo que necesitas para empezar a vender online
+      </p>
+      <ul>
+        <li>1 landing page optimizada para conversión</li>
+        <li>Textos persuasivos creados y ajustados con IA</li>
+        <li>Diseño limpio y adaptable a móvil</li>
+        <li>Botón de acción conectado a WhatsApp o formulario</li>
+        <li>Optimización básica para buscadores (SEO)</li>
+        <li>Entrega en 3 a 5 días hábiles</li>
+        <li>1 ronda de ajustes incluida</li>
+      </ul>
+
+      <h3 style="margin-top: 40px; margin-bottom: 24px; color: #10b981;">🎁 Bonos incluidos (valor $150)</h3>
+      <div class="bonus-container">
+        <div class="bonus-item">
+          <span class="bonus-label">BONUS</span>
+          <div class="bonus-title">3 variaciones de copy</div>
+          <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 8px;">Para que pruebes cuál convierte más</p>
+          <div class="bonus-value">Valor: $50</div>
+        </div>
+        <div class="bonus-item">
+          <span class="bonus-label">BONUS</span>
+          <div class="bonus-title">Setup Google Analytics</div>
+          <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 8px;">Para que midas tus resultados desde día 1</p>
+          <div class="bonus-value">Valor: $100</div>
+        </div>
+      </div>
+
+      <div class="price">USD $150</div>
+      <div class="price-detail">Pago único · Sin mensualidades · Sin costos ocultos</div>
+      
+      <!-- Garantía -->
+      <div class="guarantee-box">
+        <div class="guarantee-badge">GARANTÍA DE RIESGO CERO</div>
+        <h3 class="guarantee-title">100% Satisfecho o hacemos otra landing</h3>
+        <p class="guarantee-text">
+          Si la landing no cumple tus expectativas, tienes 7 días para elegir: <strong>creamos una nueva desde cero con otro enfoque</strong> o <strong>transferimos tu inversión a otra landing para otro de tus negocios</strong>. Tu dinero nunca se pierde, solo se reinvierte hasta que quedes satisfecho.
+        </p>
+      </div>
+      
+      <a href="#contacto" class="btn">Solicitar mi landing ahora</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2 style="text-align: center;">Preguntas frecuentes</h2>
+    <div class="section-divider"></div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Incluye hosting y dominio?</span>
+        </button>
+        <div class="faq-answer">
+          No, el hosting y dominio van por separado. Te recomiendo opciones económicas como Hostinger ($3-5/mes) o puedes usar GitHub Pages (gratis). Te ayudo con las indicaciones para publicarla.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Puedo hacer cambios después de la entrega?</span>
+        </button>
+        <div class="faq-answer">
+          Sí. Incluyo 1 ronda de ajustes sin costo. Después de eso, cambios menores cuestan $20 y cambios mayores se cotizan por separado. También te entrego el código fuente para que puedas editarlo tú mismo si sabes HTML/CSS.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué pasa si no me gusta el resultado?</span>
+        </button>
+        <div class="faq-answer">
+          Primero te muestro un borrador inicial antes de terminar. Si en ese punto no te convence la dirección, hacemos ajustes. Y si al final no quedas satisfecho, tienes 7 días para elegir: creamos otra landing desde cero con un enfoque diferente, o transferimos tu inversión a una landing para otro de tus negocios. Tu dinero nunca se pierde.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Funciona para mi industria/nicho?</span>
+        </button>
+        <div class="faq-answer">
+          Si vendes algo que se puede explicar en una página (curso, servicio, producto físico o digital), funciona perfecto. He creado landings para coaches, consultores, vendedores de infoproductos, marcas de belleza, tiendas de ropa, gadgets tecnológicos, servicios de estética, productos artesanales y más. Si tienes dudas sobre tu caso específico, escríbeme y te confirmo en 5 minutos si es viable.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Cuánto tiempo toma realmente?</span>
+        </button>
+        <div class="faq-answer">
+          Entre 3 y 5 días hábiles desde que me envías la información. Si necesitas entrega urgente (24-48h), tiene un costo adicional de $50.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué información necesitas de mi parte?</span>
+        </button>
+        <div class="faq-answer">
+          Básicamente: qué vendes, a quién se lo vendes, cuál es el beneficio principal, precio (si aplica), y tu logo/colores de marca si los tienes. Te envío un formulario simple que llenas en 10 minutos.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="card">
+      <h2>¿Listo para convertir más?</h2>
+      <p style="margin-bottom: 20px; font-size: 1.05rem;">
+        Escríbeme por WhatsApp y cuéntame qué vendes y a quién.
+        En menos de 5 minutos te confirmo si una landing es la solución 
+        que necesitas y coordinamos los detalles.
+      </p>
+      <p style="margin-top: 24px; color: #64748b; font-weight: 600;">
+        ⚡ Recuerda: solo tomo 3 proyectos por mes para garantizar calidad y entrega rápida.
+      </p>
+      <br>
+      <a href="https://wa.me/573105034945?text=Hola,%20quiero%20una%20landing%20page%20para%20mi%20negocio" class="btn">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 · Landing pages claras, rápidas y funcionales
+</footer>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Toggle current item
+    if (!isActive) {
+      faqItem.classList.add('active');
+    }
+  });
+});
+
+// Countdown Timer
+function updateCountdown() {
+  const targetDate = new Date('2026-02-28T23:59:59').getTime();
+  const now = new Date().getTime();
+  const difference = targetDate - now;
+  
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  
+  document.getElementById('days').textContent = days.toString().padStart(2, '0');
+  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+}
+
+// Update countdown every minute
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Smooth scroll para los CTAs
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
