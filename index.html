@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YTHEKQPHK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9YTHEKQPHK');
-</script>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TJ2B6KL2');</script>
-<!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Landing Pages que Convierten</title>
@@ -969,10 +953,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ2B6KL2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/573105034945" class="whatsapp-float" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
   💬
@@ -1283,7 +1264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>1 ronda de ajustes incluida</li>
       </ul>
 
-      <h3 style="margin-top: 40px; margin-bottom: 24px; color: #10b981;">🎁 Bonos incluidos (valor $150)</h3>
+      <h3 style="margin-top: 40px; margin-bottom: 24px; color: #10b981;">🎁 Bonos incluidos (valor $65)</h3>
       <div class="bonus-container">
         <div class="bonus-item">
           <span class="bonus-label">BONUS</span>
@@ -1295,7 +1276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="bonus-label">BONUS</span>
           <div class="bonus-title">Setup Google Analytics</div>
           <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 8px;">Para que midas tus resultados desde día 1</p>
-          <div class="bonus-value">Valor: $100</div>
+          <div class="bonus-value">Valor: $15</div>
         </div>
       </div>
 
@@ -1452,9 +1433,100 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Track WhatsApp clicks para Google Tag Manager y Facebook Pixel
+document.querySelectorAll('a[href^="https://wa.me"]').forEach(button => {
+  button.addEventListener('click', () => {
+    // Determinar ubicación del botón
+    let buttonLocation = 'floating_button';
+    
+    if (button.closest('header')) {
+      buttonLocation = 'header';
+    } else if (button.closest('#contacto')) {
+      buttonLocation = 'contact_section';
+    } else if (button.closest('.cta-intermediate')) {
+      buttonLocation = 'cta_intermediate';
+    } else if (button.closest('#precio')) {
+      buttonLocation = 'pricing_section';
+    }
+    
+    // Google Tag Manager event
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'whatsapp_click',
+        'button_location': buttonLocation,
+        'destination': 'whatsapp',
+        'phone_number': '573105034945'
+      });
+      
+      console.log('✅ GTM Event: whatsapp_click from ' + buttonLocation);
+    }
+    
+    // Facebook Pixel event (si está instalado)
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', {
+        content_name: 'WhatsApp Click',
+        content_category: buttonLocation
+      });
+      
+      console.log('✅ Facebook Pixel: Contact event from ' + buttonLocation);
+    }
+    
+    // También trackear como conversión custom en GTM
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'conversion',
+        'conversion_type': 'lead',
+        'conversion_value': 150,
+        'conversion_currency': 'USD'
+      });
+    }
+  });
+});
+
+// Track scroll depth para optimización
+let scrollDepths = [25, 50, 75, 100];
+let scrollTracked = [];
+
+window.addEventListener('scroll', function() {
+  let scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  
+  scrollDepths.forEach(depth => {
+    if (scrollPercent >= depth && !scrollTracked.includes(depth)) {
+      scrollTracked.push(depth);
+      
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          'event': 'scroll_depth',
+          'scroll_percentage': depth
+        });
+        
+        console.log('✅ Scroll: ' + depth + '%');
+      }
+    }
+  });
+});
+
+// Track cuando abren el FAQ
+document.querySelectorAll('.faq-question').forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const questionText = button.querySelector('span').textContent;
+    
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'faq_interaction',
+        'faq_question': questionText,
+        'faq_position': index + 1
+      });
+      
+      console.log('✅ FAQ opened: ' + questionText);
+    }
+  });
+});
+
 </script>
 
 </body>
-
 </html>
+
 
